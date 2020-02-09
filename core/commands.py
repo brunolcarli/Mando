@@ -5,6 +5,7 @@ from random import randint
 import discord
 from discord.ext import commands
 
+from core.external_requests import get_random_meme
 
 client = commands.Bot(command_prefix='--')
 
@@ -56,3 +57,19 @@ async def roll(discord, sides=None):
     return await discord.send(
         f'Em um dado de {sides} lados {discord.author.name} rolou {result}!'
     )
+
+
+@client.command(aliases=['meme'])
+async def random_meme(discord):
+    """
+    Retorna um meme aleatório
+    """
+    status, data = get_random_meme()
+    if status != 200:
+        return discord.send(
+            'Desculpe obtive um erro ao consultar os memes,'\
+            ' por favor tente novamente mais tarde!'
+        )
+
+    meme_url = data.get('url')
+    await discord.send(meme_url)

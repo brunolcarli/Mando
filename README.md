@@ -7,8 +7,8 @@
 ### Discord Bot
 
 ![](https://badgen.net/badge/icon/discord?icon=discord&label)
-[![Generic badge](https://img.shields.io/badge/docs-github_wiki-blue.svg)](https://github.com/brunolcarli/Mando/wiki)
-![Generic badge](https://img.shields.io/badge/version-0.0.2-green.svg)
+[![Wiki badge](https://badgen.net/badge/docs/github_wiki?icon=github)](https://github.com/brunolcarli/Mando/wiki)
+![Generic badge](https://img.shields.io/badge/version-0.0.3-green.svg)
 ![Generic badge](https://img.shields.io/badge/docs_lang-PT_BR-darkgreen.svg)
 ![Generic badge](https://img.shields.io/badge/code_lang-English-darkgreen.svg)
 [![Run on Repl.it](https://repl.it/badge/github/brunolcarli/Mando)](https://repl.it/github/brunolcarli/Mando)
