@@ -8,7 +8,7 @@
 
 ![](https://badgen.net/badge/icon/discord?icon=discord&label)
 [![Generic badge](https://img.shields.io/badge/docs-github_wiki-blue.svg)](https://github.com/brunolcarli/Mando/wiki)
-![Generic badge](https://img.shields.io/badge/version-0.0.1-green.svg)
+![Generic badge](https://img.shields.io/badge/version-0.0.2-green.svg)
 ![Generic badge](https://img.shields.io/badge/docs_lang-PT_BR-darkgreen.svg)
 ![Generic badge](https://img.shields.io/badge/code_lang-English-darkgreen.svg)
 

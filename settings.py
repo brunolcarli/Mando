@@ -3,7 +3,8 @@ Módulo para configurações do Mando
 """
 from decouple import config
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 TOKEN = config('TOKEN', '')
 API_URL = config('STAR_DESTROYER', '')
+SETTINGS_MODULE = config('SETTINGS_MODULE', 'common')
