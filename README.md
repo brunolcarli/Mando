@@ -66,7 +66,7 @@ Uma mensagem `Ready!` será exibida informando que o bot está executando.
 
 <hr />
 
-![Windows badge](https://badgen.net/badge/OS/Windows/:color?icon=windows)
+<img src="https://badgen.net/badge/OS/Windows/:color?icon=windows">
 
 Certifique-se de possuir o `pip` installado sobre uma das versões do Python apresentadas nas depndências do projeto:
 
