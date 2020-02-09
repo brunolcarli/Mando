@@ -11,7 +11,7 @@
 ![Generic badge](https://img.shields.io/badge/version-0.0.2-green.svg)
 ![Generic badge](https://img.shields.io/badge/docs_lang-PT_BR-darkgreen.svg)
 ![Generic badge](https://img.shields.io/badge/code_lang-English-darkgreen.svg)
-
+[![Run on Repl.it](https://repl.it/badge/github/brunolcarli/Mando)](https://repl.it/github/brunolcarli/Mando)
 
 </td></tr></table>
 
