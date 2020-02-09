@@ -1,5 +1,5 @@
 from sys import stdout
-from settings import TOKEN
+from settings import TOKEN, __version__
 from core.commands import client
 
 
@@ -22,9 +22,10 @@ banner = r'''
    ╔╦╗┌─┐┌┐┌┌┬┐┌─┐
    ║║║├─┤│││ │││ │
    ╩ ╩┴ ┴┘└┘─┴┘└─┘
-
+     Discord Bot
 '''
 
 if __name__ == "__main__":
     stdout.write(banner)
+    stdout.write(f'Running Mando version: {__version__}\n')
     client.run(TOKEN)
