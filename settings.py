@@ -7,3 +7,4 @@ __version__ = '0.0.1'
 
 TOKEN = config('TOKEN', '')
 API_URL = config('STAR_DESTROYER', '')
+SETTINGS_MODULE = config('SETTINGS_MODULE', 'common')

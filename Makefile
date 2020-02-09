@@ -8,3 +8,8 @@ dev_install:
 
 run:
 	python main.py
+
+
+replit:
+	pip install -r requirements/common.txt
+	python main.py
