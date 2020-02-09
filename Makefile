@@ -11,5 +11,5 @@ run:
 
 
 replit:
-	pip install -r requirements/common.txt
-	python main.py
+	pip3 install -r requirements/common.txt
+	python3 main.py
