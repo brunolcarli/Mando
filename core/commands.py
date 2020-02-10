@@ -1,11 +1,13 @@
 r"""
 Módulo dedicado aos comandos Discord que o Mando disponibiliza
 """
-from random import randint
+from random import randint, choice
 import discord
 from discord.ext import commands
 
-from core.external_requests import get_random_meme
+from core.external_requests import get_random_meme, Queries, Mutations
+from core.util import get_gql_client, make_hash
+from settings import API_URL
 
 client = commands.Bot(command_prefix='--')
 
@@ -73,3 +75,58 @@ async def random_meme(discord):
 
     meme_url = data.get('url')
     await discord.send(meme_url)
+
+
+@client.command(aliases=['rquote', 'rq'])
+async def random_quote(bot):
+    """
+    Retorna um quote aleatório.
+    """
+
+    server = make_hash(bot.guild.name, bot.guild.id)
+    payload = Queries.get_quotes(server.decode('utf-8'))
+    client = get_gql_client(API_URL)
+
+    try:
+        response = client.execute(payload)
+    except Exception as err:
+        print(f'Erro: {str(err)}\n\n')
+        return await bot.send('Erro')
+
+    quotes = response.get('botQuotes')
+    if not quotes:
+        return await bot.send('Ainda não há registros de quotes neste servidor')
+
+    chosen_quote = choice(quotes)
+    embed = discord.Embed(color=0x1E1E1E, type="rich")
+    embed.add_field(name='Quote:', value=chosen_quote, inline=True)
+    return await bot.send('Lembra disso:', embed=embed)
+
+
+@client.command(aliases=['q', 'sq', 'save_quote'])
+async def quote(bot, *args):
+    """
+    Retorna um quote aleatório.
+    """
+    message = ' '.join(word for word in args)
+
+    if not message:
+        return await bot.send(
+            'Por favor insira uma mensagem.\nExemplo:\n'\
+            '``` --quote my name is bond, vagabond ```'
+        )
+
+    server = make_hash(bot.guild.name, bot.guild.id)
+    payload = Mutations.create_quote(message, server.decode('utf-8'))
+    client = get_gql_client(API_URL)
+
+    try:
+        response = client.execute(payload)
+    except Exception as err:
+        print(f'Erro: {str(err)}\n\n')
+        return await bot.send('Erro')
+
+    quote = response.get('botCreateQuote')
+    embed = discord.Embed(color=0x1E1E1E, type="rich")
+    embed.add_field(name='Quote salvo:', value=quote.get('response'), inline=True)
+    return await bot.send('Feito:', embed=embed)
